@@ -51,6 +51,7 @@
 		69B053C62A74FCC700ECA2E5 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		69B053C82A74FDC900ECA2E5 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		69B0540F2A790E8000ECA2E5 /* OptionSet.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OptionSet.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		69B054152A7A582900ECA2E5 /* Protocol.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Protocol.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +107,7 @@
 				69B053C82A74FDC900ECA2E5 /* ArticleView.swift */,
 				69B053C42A74FC9D00ECA2E5 /* Article.swift */,
 				69B053C62A74FCC700ECA2E5 /* ArticleViewModel.swift */,
+				69B054152A7A582900ECA2E5 /* Protocol.playground */,
 				69B0540F2A790E8000ECA2E5 /* OptionSet.playground */,
 				69B0539E2A74FC8600ECA2E5 /* Assets.xcassets */,
 				69B053A02A74FC8600ECA2E5 /* Preview Content */,
