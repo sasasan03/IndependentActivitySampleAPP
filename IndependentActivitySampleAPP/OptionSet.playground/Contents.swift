@@ -133,5 +133,28 @@ import Foundation
 //array2.isSubset(of: furits02)//true
 ////🍔array2の["なし", "もも"]と全く同じ要素を持っているか、
 ////     ["なし", "もも"]＋他の持っていない要素を持っている場合にtrueを返す。
-//----------------------------------------
+//----------------------------------------🍹Setのメソッド検証🍹
+//🍹🍹上のメソッドはSet型を返す。下は何も返さないメソッド。
+//上persons1.union(persons2)は大元の配列を書き換えない。 下はpersons1.formUnion(persons2)で大元の配列を書き換える。
+
+//var persons1: Set<String> = []
+//persons1 = ["さこ", "まこ", "まさ"]
+//let persons2 = ["さこ", "こーへい", "しんご"]
+//>>>>>>>>>>>>>>>>>>>>>>>>>>A.union(B)-> Set, A.formUnion(B)
+//persons1.union(persons2)  //🍟["さこ", "まこ", "まさ", "こーへい", "しんご"]
+//persons1.formUnion(persons2)
+//>>>>>>>>>>>>>>>>>>>>>>>>>>A.subtracting(B)-> Set, A.subtract(B)
+//persons1.subtracting(persons2) //🍟 {"まこ", "まさ"}
+//persons1.subtract(persons2)
+//>>>>>>>>>>>>>>>>>>>>>>>>>>A.intersection(B)-> Set, A.formIntersection(B)
+//persons1.intersection(persons2) //🍟{"さこ"}
+//print(persons1)//["さこ", "まこ", "まさ"]
+//let intersectionMember = persons1.intersection(persons2)//大元のpersons1を書き換えることはできない。
+//print(intersectionMember)//{"さこ"}
+//persons1.formIntersection(persons2) //大元のpersons1を書き換えることができる。
+//print(persons1)
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>A.symmetricDifference(B)-> Set, A.formSymmetricDifference(B)
+//persons1.symmetricDifference(persons2)
+//persons1.formSymmetricDifference(persons2)
 
