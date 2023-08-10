@@ -1,6 +1,7 @@
 import UIKit
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>🍹P121
+//🍔
 //protocol SimpleVector {
 //    associatedtype Element
 //    var x: Element { get set }//予測変換で出てこない
@@ -27,7 +28,7 @@ import UIKit
 //}
 //
 //struct VectorGrade: SimpleVector, CustomStringConvertible {
-////    typealias Element = String　//🍟こいつがあるとエラーになる
+////    typealias Element = String　//🍔こいつがあるとエラーになる
 //    enum Element: String { case A, B, C, D, X }
 //    var x: Element
 //    var y: Element
@@ -167,21 +168,88 @@ import UIKit
 //print(array)
 //let arraySlice = array.dropFirst()
 //print(arraySlice)
-
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>あきおさん
 //Comparable
-struct Item {
-    let name: String
-    let isChecked: Bool
-}
-let items = [
-    Item(name: "apple", isChecked: true),
-    Item(name: "apple", isChecked: false),
-    Item(name: "banana", isChecked: true),
-    Item(name: "banana", isChecked: false),
-    Item(name: "orange", isChecked: true),
-]
-let uniqueValues = Dictionary<String, Item>(
-    items.map { ($0.name, $0) }, // nameを使ってユニークにする
-    uniquingKeysWith: { first, _ in first }
-).values
-print(uniqueValues)
+//struct Item {
+//    let name: String
+//    let isChecked: Bool
+//}
+//let items = [
+//    Item(name: "apple", isChecked: true),
+//    Item(name: "apple", isChecked: false),
+//    Item(name: "banana", isChecked: true),
+//    Item(name: "banana", isChecked: false),
+//    Item(name: "orange", isChecked: true),
+//]
+//let uniqueValues = Dictionary<String, Item>(
+//    items.map { ($0.name, $0) }, // nameを使ってユニークにする
+//    uniquingKeysWith: { first, _ in first }
+//).values
+//print(uniqueValues)
+
+
+//Dictionaryの型パラメータは省略できますね
+//let uniqueValues = Dictionary(
+//    items.map { ($0.name, $0) }, // nameを使ってユニークにする
+//    uniquingKeysWith: { first, _ in first }
+//).values
+//
+////重複判定に使うプロパティを1つ指定できるようにしてみました
+//extension Array {
+//    func unique<Key: Hashable>(keyPath: KeyPath<Element, Key>) -> [Element] {
+//        Array(
+//            Dictionary(
+//                map { ($0[keyPath: keyPath], $0) },
+//                uniquingKeysWith: { first, _ in first }
+//            ).values
+//        )
+//    }
+//}
+//print(items.unique(keyPath: \.name))
+//print(items.unique(keyPath: \.isChecked))
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>🍹重要事項
+//🍟：＝＝だとEquatableだけでいける。==は同じであることを確認するものなので、プロパティの一部（この場合はname）だけ比較するのは避けた方が良い。
+//🧐 ＜も使えるようにしたい。どうすれば？
+
+
+//struct Person: Equatable {
+//    var name: String
+//    var age: Int
+//}
+//
+//let sako = Person(name: "さこ", age: 31)
+//let mako = Person(name: "まこ", age: 31)
+//
+//print(sako == mako)
+//print(sako < mako)//🍔これはできない
+//
+//extension Person: Comparable {//🍔stubで(<)しか出て来ない。
+//    static func < (lhs: Person, rhs: Person) -> Bool {
+//        return lhs.age < rhs.age
+//    }
+//}
+
+//==はどんな時にtrueを返してほしいのか具体的に書かなければいけない。
+//struct Person: Comparable{
+//
+//    var person: (name: String, age: Int)
+//
+//    static func < (lhs: Person, rhs: Person) -> Bool {
+//        return lhs.person.age < rhs.person.age
+//    }
+//
+//    static func == (lhs: Person, rhs: Person) -> Bool {
+//        return lhs.person == rhs.person ||
+//               lhs.person.name == rhs.person.name ||
+//               lhs.person.age == rhs.person.age
+//    }
+//}
+//
+//let sako = Person(person: (name: "さこ", age: 31))
+//let hiro = Person(person: (name: "さこ", age: 31))
+//let mako = Person(person: (name: "まこ", age: 31))
+//let masa = Person(person: (name: "まさ", age: 26))
+//print(sako == masa)
+//print(sako == mako)
+//print(sako > masa)
