@@ -158,3 +158,9 @@ import Foundation
 //persons1.symmetricDifference(persons2)
 //persons1.formSymmetricDifference(persons2)
 
+//---------------------------------------------------------🍔p274　RawRepresentable
+
+
+
+
+

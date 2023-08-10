@@ -68,7 +68,7 @@ import UIKit
 //print(a)
 //let b = VectorInt(x: -1, y: 6)
 //❓❓+はどうしてインスタンス化しなくても使えてん？
-//🍔二項演算しとして認識している。
+//🍔二項演算子として認識している。
 //print(a + b)
 //
 ////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>🍹P126
@@ -119,6 +119,7 @@ import UIKit
 //print(shop01 == shop02)
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>🍹P129
+//🐲==は同じであることを確認するものなので、プロパティの一部（この場合はname）だけ比較するのは避けた方が良いです
 //struct Time: Comparable, CustomStringConvertible{
 //
 //    let hour, min: Int
@@ -167,3 +168,20 @@ import UIKit
 //let arraySlice = array.dropFirst()
 //print(arraySlice)
 
+//Comparable
+struct Item {
+    let name: String
+    let isChecked: Bool
+}
+let items = [
+    Item(name: "apple", isChecked: true),
+    Item(name: "apple", isChecked: false),
+    Item(name: "banana", isChecked: true),
+    Item(name: "banana", isChecked: false),
+    Item(name: "orange", isChecked: true),
+]
+let uniqueValues = Dictionary<String, Item>(
+    items.map { ($0.name, $0) }, // nameを使ってユニークにする
+    uniquingKeysWith: { first, _ in first }
+).values
+print(uniqueValues)
