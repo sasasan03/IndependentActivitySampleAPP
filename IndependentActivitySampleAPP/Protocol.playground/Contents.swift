@@ -1,13 +1,18 @@
 import UIKit
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>🍹P121
-//🍔
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//🍔Equatable
+//🍔Comparable
+//
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//🟩
 //protocol SimpleVector {
 //    associatedtype Element
 //    var x: Element { get set }//予測変換で出てこない
 //    var y: Element { get set }
 //}
-//
+////
 //struct VectorFloat: SimpleVector{
 //  //  typealias Element = Float
 //    var x: Float
@@ -26,7 +31,7 @@ import UIKit
 //        self.init(x: Double(d.x), y: Double(d.y))
 //    }
 //}
-//
+//🟩
 //struct VectorGrade: SimpleVector, CustomStringConvertible {
 ////    typealias Element = String　//🍔こいつがあるとエラーになる
 //    enum Element: String { case A, B, C, D, X }
@@ -41,6 +46,7 @@ import UIKit
 //print(g)
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>🍹P124
+//🟩
 //protocol TransVector {
 //    associatedtype Element
 //    var x: Element { get set }
@@ -73,7 +79,7 @@ import UIKit
 //print(a + b)
 //
 ////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>🍹P126
-//
+//🟩
 //protocol EqVector: Equatable {
 //    associatedtype Element: Equatable
 //    var x: Element { get set }
@@ -87,7 +93,7 @@ import UIKit
 //    var y: Int
 //    var description: String { "[\(x),\(y)]" }
 //}
-//
+//🟩
 //struct ShopOnMap: EqVector, CustomStringConvertible{
 //    var shop: (name: String, comment: String?)
 //    var x, y: Float
@@ -121,6 +127,7 @@ import UIKit
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>🍹P129
 //🐲==は同じであることを確認するものなので、プロパティの一部（この場合はname）だけ比較するのは避けた方が良いです
+//🟩
 //struct Time: Comparable, CustomStringConvertible{
 //
 //    let hour, min: Int
@@ -147,7 +154,8 @@ import UIKit
 //print(t3 != t2)
 //print(t2 > t1)
 //print([t1,t2,t3].sorted())
-//
+
+//🟩
 //struct PersonName: Comparable {
 //    static func < (lhs: PersonName, rhs: PersonName) -> Bool {
 //        return lhs.name.count > rhs.name.count
@@ -169,7 +177,8 @@ import UIKit
 //let arraySlice = array.dropFirst()
 //print(arraySlice)
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>あきおさん
-//Comparable
+
+//🟩Comparable
 //struct Item {
 //    let name: String
 //    let isChecked: Bool
@@ -186,7 +195,6 @@ import UIKit
 //    uniquingKeysWith: { first, _ in first }
 //).values
 //print(uniqueValues)
-
 
 //Dictionaryの型パラメータは省略できますね
 //let uniqueValues = Dictionary(
@@ -212,8 +220,7 @@ import UIKit
 //🍟：＝＝だとEquatableだけでいける。==は同じであることを確認するものなので、プロパティの一部（この場合はname）だけ比較するのは避けた方が良い。
 //🧐 ＜も使えるようにしたい。どうすれば？
 
-
-//struct Person: Equatable {
+//🟩struct Person: Equatable {
 //    var name: String
 //    var age: Int
 //}
@@ -230,7 +237,7 @@ import UIKit
 //    }
 //}
 
-//==はどんな時にtrueを返してほしいのか具体的に書かなければいけない。
+//🟩==はどんな時にtrueを返してほしいのか具体的に書かなければいけない。
 //struct Person: Comparable{
 //
 //    var person: (name: String, age: Int)
@@ -240,8 +247,7 @@ import UIKit
 //    }
 //
 //    static func == (lhs: Person, rhs: Person) -> Bool {
-//        return lhs.person == rhs.person ||
-//               lhs.person.name == rhs.person.name ||
+//        return lhs.person.name == rhs.person.name &&
 //               lhs.person.age == rhs.person.age
 //    }
 //}
@@ -250,6 +256,78 @@ import UIKit
 //let hiro = Person(person: (name: "さこ", age: 31))
 //let mako = Person(person: (name: "まこ", age: 31))
 //let masa = Person(person: (name: "まさ", age: 26))
+//print(sako.person.age < hiro.person.age)
 //print(sako == masa)
 //print(sako == mako)
 //print(sako > masa)
+
+//============================================CustomStringConvertible
+//🟩
+//struct Person{//: CustomStringConvertible{
+//    let name: String
+//  //  var description: String { return "name is \(name)" }
+//}
+//
+//let sako = Person(name: "sako")
+//print(sako)
+
+//🟩
+//struct Point{
+//    var number: Int
+//}
+//
+//extension Point: CustomStringConvertible{
+//    var description: String {
+//        return "入力した数字は\(number)です"
+//    }
+//}
+//
+//let numbwe3 = Point(number: 3)
+//print(numbwe3)
+
+//🟩
+//struct Person {
+//    var name: String
+//    struct age: CustomStringConvertible {
+//        let int: Int
+//        var description: String{
+//            return "\(int)さい"
+//        }
+//    }
+//}
+//
+//let sako = Person.age(int: 11)
+//print(sako)
+//let mako = Person(name: "まさ")
+//print(mako)
+
+
+//============================================RawRepresentable
+//🟩
+
+
+//🟨
+//typealias Identifiable = RawRepresentable & Codable & Equatable & Hashable
+
+//struct User: Codable {
+//    let id: ID
+//    let name: String
+//    let job: Job
+//
+//    struct ID: Identifiable {
+//        typealias RawValue = String
+//        let rawValue: RawValue
+//    }
+//}
+
+//struct Job: Codable {
+//    let id: ID
+//    let name: String
+//
+//    struct ID: Identifiable {
+//        typealias RawValue = String
+//        let rawValue: RawValue
+//    }
+//}
+
+
