@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+struct Article{
+    var name: String
+    var 
+}
+
 struct ContentView: View {
-    
-    @ObservedObject var viewModel = ArticleViewModol()
     
     var body: some View {
         VStack {
