@@ -1,6 +1,36 @@
 //: [Previous](@previous)
 
 import Foundation
+//🍔シンプルな列挙型
+//enum Direction {
+//    case up, down, rigth, left
+//}
+//let down = Direction.down
+//let up: Direction = .up
+//print(down == up)
+
+//🍔値型の列挙型
+//enum Direction: Int {//🍹型アノテーションの指定は必須
+//    case up = 2, down, rigth, left
+//}
+//
+//let a = Direction.rigth
+//print(a)//rigth
+//let i = a.rawValue
+//print(i)//4
+
+enum Direction: String { //🍹RawValueがStringでも大丈夫🙆
+    case up = "アップ", down = "ダウン", rigth = "ライト", left = "レフト"
+}
+
+let a = Direction.rigth
+print(a)//rigth
+let i = a.rawValue
+print(i)//4
+
+let k = Direction.down.rawValue
+
+
 
 struct Article {}
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Article{
     var name: String
-    var 
+    var content: String
 }
 
 struct ContentView: View {

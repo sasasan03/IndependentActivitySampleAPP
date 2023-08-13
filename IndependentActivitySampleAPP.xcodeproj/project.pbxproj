@@ -14,7 +14,6 @@
 		69B053AC2A74FC8600ECA2E5 /* IndependentActivitySampleAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B053AB2A74FC8600ECA2E5 /* IndependentActivitySampleAPPTests.swift */; };
 		69B053B62A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B053B52A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITests.swift */; };
 		69B053B82A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B053B72A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITestsLaunchTests.swift */; };
-		69B053C92A74FDC900ECA2E5 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B053C82A74FDC900ECA2E5 /* ArticleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +44,6 @@
 		69B053B12A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndependentActivitySampleAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B053B52A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentActivitySampleAPPUITests.swift; sourceTree = "<group>"; };
 		69B053B72A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentActivitySampleAPPUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		69B053C82A74FDC900ECA2E5 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		69B0540F2A790E8000ECA2E5 /* OptionSet.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OptionSet.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		69B054152A7A582900ECA2E5 /* Protocol.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Protocol.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
@@ -100,7 +98,6 @@
 			children = (
 				69B0539A2A74FC8500ECA2E5 /* IndependentActivitySampleAPPApp.swift */,
 				69B0539C2A74FC8500ECA2E5 /* ContentView.swift */,
-				69B053C82A74FDC900ECA2E5 /* ArticleView.swift */,
 				69B054152A7A582900ECA2E5 /* Protocol.playground */,
 				69B0540F2A790E8000ECA2E5 /* OptionSet.playground */,
 				69B0539E2A74FC8600ECA2E5 /* Assets.xcassets */,
@@ -265,7 +262,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				69B0539D2A74FC8500ECA2E5 /* ContentView.swift in Sources */,
-				69B053C92A74FDC900ECA2E5 /* ArticleView.swift in Sources */,
 				69B0539B2A74FC8500ECA2E5 /* IndependentActivitySampleAPPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
