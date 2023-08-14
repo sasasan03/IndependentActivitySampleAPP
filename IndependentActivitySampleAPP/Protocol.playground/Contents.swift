@@ -1,11 +1,11 @@
 import UIKit
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>🍹P121
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //🍔Equatable
 //🍔Comparable
 //
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>🍹P121
 //🟩
 //protocol SimpleVector {
 //    associatedtype Element
@@ -126,7 +126,7 @@ import UIKit
 //print(shop01 == shop02)
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>🍹P129
-//🐲==は同じであることを確認するものなので、プロパティの一部（この場合はname）だけ比較するのは避けた方が良いです
+//🐲==は同じであることを確認するものなので、プロパティの一部（この場合はname）だけ比較するのは避けた方が良い
 //🟩
 //struct Time: Comparable, CustomStringConvertible{
 //
@@ -304,30 +304,5 @@ import UIKit
 
 //============================================RawRepresentable
 //🟩
-
-
-//🟨
-//typealias Identifiable = RawRepresentable & Codable & Equatable & Hashable
-
-//struct User: Codable {
-//    let id: ID
-//    let name: String
-//    let job: Job
-//
-//    struct ID: Identifiable {
-//        typealias RawValue = String
-//        let rawValue: RawValue
-//    }
-//}
-
-//struct Job: Codable {
-//    let id: ID
-//    let name: String
-//
-//    struct ID: Identifiable {
-//        typealias RawValue = String
-//        let rawValue: RawValue
-//    }
-//}
 
 
