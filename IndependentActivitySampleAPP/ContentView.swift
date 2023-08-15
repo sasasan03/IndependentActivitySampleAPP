@@ -7,20 +7,26 @@
 
 import SwiftUI
 
-struct Article{
+struct Article: Identifiable{
+    let id = UUID()
     var name: String
     var content: String
+    var attribute: Attribute
 }
 
-class ArticleViewModel: ObservableObject {
-    @Published var articles = [
-        Article(name: "フルーツ１", content: "バナナはお通じによし！"),
-        Article(name: "フルーツ２", content: "なしはみずみずしくてうまい"),
-        Article(name: "フルーツ３", content: "オレンジはいまいち"),
-        Article(name: "フルーツ４", content: "スイカは最高"),
-        Article(name: "フルーツ５", content: "フルーツトマトはフルーツか？"),
-        Article(name: "フルーツ６", content: "全てのフルーツについて")
-    ]
+struct ArticleViewModel {
+    let articles = [
+            Article(name: "フルーツ１", content: "バナナはお通じによし！", attribute: .a),
+            Article(name: "フルーツ２", content: "なしはみずみずしくてうまい", attribute: .b),
+            Article(name: "フルーツ３", content: "オレンジはいまいち", attribute: .c),
+            Article(name: "フルーツ４", content: "スイカは最高", attribute: .d),
+            Article(name: "フルーツ５", content: "フルーツトマトはフルーツか？", attribute: .e),
+            Article(name: "フルーツ６", content: "全てのフルーツ", attribute: .all)
+        ]
+    
+    func getArticles(for attributes: [Attribute]) -> [Article] {
+            return articles.filter { attributes.contains($0.attribute) }
+        }
 }
 
 struct Attribute: OptionSet, Hashable {
@@ -35,13 +41,45 @@ struct Attribute: OptionSet, Hashable {
     static let all: Attribute = [.a,.b,.c,.d,.e,.f]
 }
 
+extension Attribute: CaseIterable {
+    static var allCases: [Attribute]{
+        return [.a,.b,.c,.d,.e,.f,.all]
+    }
+    var description: String{
+        switch self {
+        case .a: return "フルーツ１"
+        case .b: return "フルール２"
+        case .c: return "フルーツ３"
+        case .d: return "フルーツ４"
+        case .e: return "フルーツ５"
+        case .f: return "フルーツ６"
+        case .all: return "フルーツ７"
+        default: return ""
+        }
+    }
+}
+
 struct ContentView: View {
     
+    @State private var attributeStack: [Attribute] = []
+    
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             VStack {
-                
-                Text("Hello, world!")
+                List(Attribute.allCases, id: \.rawValue) { attribute in
+                    HStack {
+                        Button {
+                            attributeStack.append(attribute)
+                            print(attributeStack.description)
+                        } label: {
+                            Text(attribute.description)
+                        }
+                    }
+                }
+                Text(attributeStack.description)
+                NavigationLink("遷移する") {
+                    NextView(selectedAttribute: $attributeStack)
+                }
             }
         }
     }

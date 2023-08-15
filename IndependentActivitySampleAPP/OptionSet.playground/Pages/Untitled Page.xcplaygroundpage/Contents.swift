@@ -59,7 +59,6 @@ struct Attribute: OptionSet, Hashable {
     static let d = Attribute(rawValue: 1 << 3)//１を３ビット左にシフト
 }
 
-
 let b1: Attribute = .a
 let b2: Attribute = .b
 let b3: Attribute = .c
@@ -94,3 +93,9 @@ relations[[.a]]
 relations[[.c]]
 relations[[.d]]
 relations[[.a, .b, .c]]
+
+
+var attributeStack: [Attribute] = []
+attributeStack.append(.a)
+print(attributeStack)
+attributeStack.append([.b,.c])

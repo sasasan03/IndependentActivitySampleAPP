@@ -9,20 +9,28 @@ import SwiftUI
 
 struct NextView: View {
     
-    @ObservedObject var articleViewModel: ArticleViewModel
+    let viewModel = ArticleViewModel()
+    @Binding var selectedAttribute: [Attribute]
     
     var body: some View {
         NavigationStack{
-            VStack{
-                Text("Hello, World!")
-                Text("やあやあ")
+            List(viewModel.getArticles(for: selectedAttribute), id: \.id){ article in
+                HStack{
+                    Text(article.name)
+                    NavigationLink {
+                        ArticleView(article: article)
+                    } label: {
+                        
+                    }
+                }
             }
         }
     }
 }
 
+
 struct NextView_Previews: PreviewProvider {
     static var previews: some View {
-        NextView(articleViewModel: ArticleViewModel())
+        NextView(selectedAttribute: Binding<[Attribute]>.constant([Attribute.a]))
     }
 }
