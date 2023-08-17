@@ -20,6 +20,6 @@ struct ArticleView: View {
 
 struct ArticleView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleView(article: Article(name: "フルーツ１", content: "ぶどうはうまい", attribute: .a))
+        ArticleView(article: Article(name: "フルーツ１", content: "ぶどうはうまい", attribute: [.a]))
     }
 }

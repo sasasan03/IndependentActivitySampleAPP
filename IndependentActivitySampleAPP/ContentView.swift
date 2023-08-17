@@ -11,24 +11,24 @@ struct Article: Identifiable{
     let id = UUID()
     var name: String
     var content: String
-    var attribute: Attribute
+    var attribute: [Attribute]
 }
 
 struct ArticleViewModel {
     let articles = [
-            Article(name: "フルーツ１", content: "バナナはお通じによし！", attribute: .a),
-            Article(name: "フルーツ２", content: "なしはみずみずしくてうまい", attribute: .b),
-            Article(name: "フルーツ３", content: "オレンジはいまいち", attribute: .c),
-            Article(name: "フルーツ４", content: "スイカは最高", attribute: .d),
-            Article(name: "フルーツ５", content: "フルーツトマトはフルーツか？", attribute: .e),
-            Article(name: "フルーツ６", content: "全てのフルーツ", attribute: .all)
+        Article(name: "フルーツ１", content: "バナナはお通じによし！", attribute: [.a, .b, .c]),
+        Article(name: "フルーツ２", content: "なしはみずみずしくてうまい", attribute: [.b, .f]),
+        Article(name: "フルーツ３", content: "オレンジはいまいち", attribute: [.c, .e]),
+        Article(name: "フルーツ４", content: "スイカは最高", attribute: [.d, .e]),
+        Article(name: "フルーツ５", content: "フルーツトマトはフルーツか？", attribute: [.a, .e]),
+        Article(name: "フルーツ６", content: "全てのフルーツ", attribute: [.a, .b, .c, .d, .e, .f])
         ]
     
     func getArticles(for attributes: [Attribute]) -> [Article] {
             return articles.filter { attributes.contains($0.attribute) }
         }
 }
-
+//
 struct Attribute: OptionSet, Hashable {
     let rawValue: UInt
     static let a = Attribute(rawValue: 1 << 0)
@@ -38,22 +38,22 @@ struct Attribute: OptionSet, Hashable {
     static let e = Attribute(rawValue: 1 << 4)
     static let f = Attribute(rawValue: 1 << 5)
     
-    static let all: Attribute = [.a,.b,.c,.d,.e,.f]
+   // static let all: Attribute = [.a,.b,.c,.d,.e,.f]
 }
 
 extension Attribute: CaseIterable {
     static var allCases: [Attribute]{
-        return [.a,.b,.c,.d,.e,.f,.all]
+        return [.a,.b,.c,.d,.e,.f]//,.all]
     }
     var description: String{
         switch self {
-        case .a: return "フルーツ１"
-        case .b: return "フルール２"
-        case .c: return "フルーツ３"
-        case .d: return "フルーツ４"
-        case .e: return "フルーツ５"
-        case .f: return "フルーツ６"
-        case .all: return "フルーツ７"
+        case .a: return "要素『１』"
+        case .b: return "要素『２』"
+        case .c: return "要素『３』"
+        case .d: return "要素『４』"
+        case .e: return "要素『５』"
+        case .f: return "要素『６』"
+       // case .all: return "要素『全』"
         default: return ""
         }
     }
@@ -70,7 +70,6 @@ struct ContentView: View {
                     HStack {
                         Button {
                             attributeStack.append(attribute)
-                            print(attributeStack.description)
                         } label: {
                             Text(attribute.description)
                         }
