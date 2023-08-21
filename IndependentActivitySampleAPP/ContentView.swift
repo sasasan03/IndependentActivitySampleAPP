@@ -16,7 +16,7 @@ struct Article: Identifiable{
 
 struct ArticleViewModel {
     let articles = [
-        Article(name: "フルーツ１", content: "バナナはお通じによし！", attribute: [.a, .b, .c]),
+        Article(name: "フルーツ１", content: "バナナはお通じによし！", attribute: [.a, .b]),
         Article(name: "フルーツ２", content: "なしはみずみずしくてうまい", attribute: [.b, .f]),
         Article(name: "フルーツ３", content: "オレンジはいまいち", attribute: [.c, .e]),
         Article(name: "フルーツ４", content: "スイカは最高", attribute: [.d, .e]),
@@ -28,7 +28,7 @@ struct ArticleViewModel {
             return articles.filter { attributes.contains($0.attribute) }
         }
 }
-//
+
 struct Attribute: OptionSet, Hashable {
     let rawValue: UInt
     static let a = Attribute(rawValue: 1 << 0)
@@ -37,7 +37,6 @@ struct Attribute: OptionSet, Hashable {
     static let d = Attribute(rawValue: 1 << 3)
     static let e = Attribute(rawValue: 1 << 4)
     static let f = Attribute(rawValue: 1 << 5)
-    
    // static let all: Attribute = [.a,.b,.c,.d,.e,.f]
 }
 
@@ -53,7 +52,6 @@ extension Attribute: CaseIterable {
         case .d: return "要素『４』"
         case .e: return "要素『５』"
         case .f: return "要素『６』"
-       // case .all: return "要素『全』"
         default: return ""
         }
     }

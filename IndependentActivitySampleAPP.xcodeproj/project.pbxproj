@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69805DC02A92060400329AFD /* privteAPIkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69805DBF2A92060400329AFD /* privteAPIkey.swift */; };
 		69B0539B2A74FC8500ECA2E5 /* IndependentActivitySampleAPPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0539A2A74FC8500ECA2E5 /* IndependentActivitySampleAPPApp.swift */; };
 		69B0539D2A74FC8500ECA2E5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B0539C2A74FC8500ECA2E5 /* ContentView.swift */; };
 		69B0539F2A74FC8600ECA2E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B0539E2A74FC8600ECA2E5 /* Assets.xcassets */; };
@@ -36,14 +37,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		69B053972A74FC8500ECA2E5 /* IndependentActivitySampleAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndependentActivitySampleAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69805DBF2A92060400329AFD /* privteAPIkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = privteAPIkey.swift; sourceTree = "<group>"; };
+		69B053972A74FC8500ECA2E5 /* IndependentActivitySampleAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = IndependentActivitySampleAPP.app; path = "/Users/sakohiro/Desktop/IndependentActivitySampleAPP/build/Debug-iphoneos/IndependentActivitySampleAPP.app"; sourceTree = "<absolute>"; };
 		69B0539A2A74FC8500ECA2E5 /* IndependentActivitySampleAPPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentActivitySampleAPPApp.swift; sourceTree = "<group>"; };
 		69B0539C2A74FC8500ECA2E5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		69B0539E2A74FC8600ECA2E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69B053A12A74FC8600ECA2E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		69B053A72A74FC8600ECA2E5 /* IndependentActivitySampleAPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndependentActivitySampleAPPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B053A72A74FC8600ECA2E5 /* IndependentActivitySampleAPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = IndependentActivitySampleAPPTests.xctest; path = "/Users/sakohiro/Desktop/IndependentActivitySampleAPP/build/Debug-iphoneos/IndependentActivitySampleAPPTests.xctest"; sourceTree = "<absolute>"; };
 		69B053AB2A74FC8600ECA2E5 /* IndependentActivitySampleAPPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentActivitySampleAPPTests.swift; sourceTree = "<group>"; };
-		69B053B12A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndependentActivitySampleAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B053B12A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = IndependentActivitySampleAPPUITests.xctest; path = "/Users/sakohiro/Desktop/IndependentActivitySampleAPP/build/Debug-iphoneos/IndependentActivitySampleAPPUITests.xctest"; sourceTree = "<absolute>"; };
 		69B053B52A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentActivitySampleAPPUITests.swift; sourceTree = "<group>"; };
 		69B053B72A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentActivitySampleAPPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		69B0540F2A790E8000ECA2E5 /* OptionSet.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OptionSet.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -83,18 +85,7 @@
 				69B053992A74FC8500ECA2E5 /* IndependentActivitySampleAPP */,
 				69B053AA2A74FC8600ECA2E5 /* IndependentActivitySampleAPPTests */,
 				69B053B42A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITests */,
-				69B053982A74FC8500ECA2E5 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		69B053982A74FC8500ECA2E5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				69B053972A74FC8500ECA2E5 /* IndependentActivitySampleAPP.app */,
-				69B053A72A74FC8600ECA2E5 /* IndependentActivitySampleAPPTests.xctest */,
-				69B053B12A74FC8600ECA2E5 /* IndependentActivitySampleAPPUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		69B053992A74FC8500ECA2E5 /* IndependentActivitySampleAPP */ = {
@@ -104,6 +95,7 @@
 				69B0539C2A74FC8500ECA2E5 /* ContentView.swift */,
 				69CB6E0B2A8A49CA005C0D7B /* NextView.swift */,
 				69CB6E0D2A8B98EC005C0D7B /* ArticleView.swift */,
+				69805DBF2A92060400329AFD /* privteAPIkey.swift */,
 				69B054152A7A582900ECA2E5 /* Protocol.playground */,
 				69B0540F2A790E8000ECA2E5 /* OptionSet.playground */,
 				69B0539E2A74FC8600ECA2E5 /* Assets.xcassets */,
@@ -144,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69B053BB2A74FC8600ECA2E5 /* Build configuration list for PBXNativeTarget "IndependentActivitySampleAPP" */;
 			buildPhases = (
+				05073234B9A2BD0F9F49E9D2 /* [CP] Check Pods Manifest.lock */,
 				69B053932A74FC8500ECA2E5 /* Sources */,
 				69B053942A74FC8500ECA2E5 /* Frameworks */,
 				69B053952A74FC8500ECA2E5 /* Resources */,
+				4F72B4D56C45B4EFB4E4D4C8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -225,7 +219,7 @@
 				Base,
 			);
 			mainGroup = 69B0538E2A74FC8500ECA2E5;
-			productRefGroup = 69B053982A74FC8500ECA2E5 /* Products */;
+			productRefGroup = 69B0538E2A74FC8500ECA2E5;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -262,11 +256,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05073234B9A2BD0F9F49E9D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IndependentActivitySampleAPP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F72B4D56C45B4EFB4E4D4C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IndependentActivitySampleAPP/Pods-IndependentActivitySampleAPP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IndependentActivitySampleAPP/Pods-IndependentActivitySampleAPP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IndependentActivitySampleAPP/Pods-IndependentActivitySampleAPP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		69B053932A74FC8500ECA2E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69805DC02A92060400329AFD /* privteAPIkey.swift in Sources */,
 				69B0539D2A74FC8500ECA2E5 /* ContentView.swift in Sources */,
 				69B0539B2A74FC8500ECA2E5 /* IndependentActivitySampleAPPApp.swift in Sources */,
 				69CB6E0C2A8A49CA005C0D7B /* NextView.swift in Sources */,
